@@ -21,9 +21,8 @@ Thank you supporting the next generation of businesses !
 
 - [Get started](#get-started)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
+  - [Install and run](#install-and-run)
   - [Test](#test)
-  - [Run](#run)
 - [Campaign API](#campaign-api)
 
   - [Overview](#overview-1)
@@ -85,7 +84,7 @@ If you need to install any of these follow the relevant installation guides:
 - [cURL](https://curl.se/download.html)
 
 
-### Install
+### Install and run
 
 To get started with the app, clone the repo and `cd` into the directory:
 
@@ -110,6 +109,8 @@ And that's it, you are running Mini Seedrs with Docker !
 
 To make sure, you can run `docker ps` to list all containers and their status. You should see both `docker-mini-seedrs` and `postgres` images with status `Up`.
 
+You can now send requests to localhost, on Port 3000.
+
 
 ### Test
 
@@ -119,18 +120,9 @@ Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) the exp
 
 > :warning: For speed and efficiency [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) was developed with sqlite3 as database. When dockerizing the project, the decision to move to PostgreSQL was also made. A database authentication error now arises when running `rspec` which I am struggling to resolve. 
 
-Suggestions are welcome - see how to contribute in the [Contribution](#contribution) section.
+This is not a problem because BDD had already served its purpose and we will be able to test the correct behaviour with our requests. 
 
-
-### Run
-
-If the test suite passes, you'll be ready to run the app in a local server:
-
-```
-rails server
-```
-
-Port 3000 is used by default.
+Nevertheless, suggestions on this issue are welcome - see how to contribute in the [Contribution](#contribution) section.
 
 ---
 
