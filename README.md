@@ -99,7 +99,7 @@ Then build the Docker image:
 docker-compose build
 ```
 
-And run the containers:
+Spin up the containers:
 
 ```
 docker-compose up
@@ -107,7 +107,7 @@ docker-compose up
 
 And that's it, you are running Mini Seedrs with Docker !
 
-To make sure, you can run `docker ps` to list all containers and their status. You should see both `docker-mini-seedrs` and `postgres` images with status `Up`.
+To make sure, open a new terminal tab and run `docker ps` to list all containers and their status. You should see both `docker-mini-seedrs` and `postgres` images with status `Up`.
 
 You can now send requests to localhost, on Port 3000.
 
@@ -134,7 +134,7 @@ The Mini Seedrs Campaign API is a single interface to access current and past in
 
 ### Available data
 
-The Campaign API allows you to access the following data for when listing all campaigns:
+The Campaign API allows you to access the following data when asking for multiple campaigns:
 
 - `id` (integer): The unique id for the campaign
 - `name` (string): The name of the business running the campaign
@@ -145,7 +145,7 @@ The Campaign API allows you to access the following data for when listing all ca
 - `country` (string): The country where the business is based
 - `investment_multiple` (decimal): The investment multiple for the campaign to accepting new investment
 
-For single campaigns additional data is provided:
+Additional data is provided when accessing single campaigns:
 
 - `investment_count` (integer): The number of valid investments made for that campaign
 - `is_open` (boolean): A statement indicating whether the campaign is currently open for investment
@@ -212,10 +212,10 @@ If we want to filter out campaigns that are closed and sort the results in desce
 curl http://localhost:3000/api/v1/campaigns/open_and_target_desc
 ```
 
-And if we are only interested in campaigns that are looking for more than £500k:
+And if we are only interested in campaigns that are looking for more than £1.2 millions:
 
 ```
-curl http://localhost:3000/api/v1/campaigns?target_above=500000
+curl http://localhost:3000/api/v1/campaigns?target_above=1200000
 ```
 
 ### Response
@@ -266,7 +266,7 @@ Whereas for a single campaign you should expect:
 
 #### Error
 
-Bad request will raise errors. These are most commonly due to either a typo in the base url, or an invalid campaign id for individual resource requests.
+Bad requests will raise errors. These are most commonly due to either a typo in the base url, or an invalid campaign id for individual resource requests.
 
 In case of a typo you can expect:
 
@@ -290,7 +290,7 @@ The Mini Seedrs Investment API brings the investment functionality to our platfo
 
 ### Investment conditions
 
-In order to successfully invest in a campaign through our Investment API, make sure to satify all of the following conditions:
+In order to successfully invest in a campaign through our Investment API, make sure to satify all of the following conditions in your request:
 
 - [x] Specify a valid campaign_id
 - [x] Invest in GBP (British Pounds) only
@@ -299,11 +299,12 @@ In order to successfully invest in a campaign through our Investment API, make s
 
 If one or more of the above conditions is not respected, your investment will be rejected and an appropriate `ERROR` message returned (see section [3.4.2 Error](#error-1) for more information).
 
+
 ### Request
 
 #### API endpoint
 
-The Investment API follows the same versioned structure as the Campaigns API, resulting in the base URL:
+The Investment API is also in its version 1, resulting in the base URL:
 
 ```
 http://localhost:3000/api/v1/investments
