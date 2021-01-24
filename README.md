@@ -1,4 +1,6 @@
-# Mini Seedrs
+# Mini Seedrs is on Docker !
+
+( :mag: For a complete commit history see [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) )
 
 ## Introduction
 
@@ -87,35 +89,26 @@ If you need to install any of these follow the relevant installation guides:
 To get started with the app, clone the repo and `cd` into the directory:
 
 ```
-git clone https://github.com/filippomassarelli/mini-seedrs.git
-cd mini-seedrs
+git clone https://github.com/filippomassarelli/docker-mini-seedrs.git
+cd docker-mini-seedrs
 ```
 
 Then build the Docker image:
 
 ```
-docker build -t docker-mini-seedrs .
+docker-compose build
 ```
 
-This will pull all the dependencies and save the image with the tag docker-mini-seedrs:latest
-
-Next we 
+And run the containers:
 
 ```
-rails db:create
+docker-compose up
 ```
 
-Next, migrate the schema:
+And that's it, you are running Mini Seedrs with Docker !
 
-```
-rails db:migrate
-```
+To make sure, you can run `docker ps` to list all containers and their status. You should see both `docker-mini-seedrs` and `postgres` images with status `Up`.
 
-Finally, load the initial data:
-
-```
-rails db:seed
-```
 
 ### Test
 
