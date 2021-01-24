@@ -119,7 +119,7 @@ Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) the exp
 
 > :warning: For speed and efficiency [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) was developed with sqlite3 as database. When dockerizing the project, the decision to move to PostgreSQL was also made. A database authentication error now arises when running `rspec` which I am struggling to resolve. 
 
-> Suggestions are welcome - see how to contribute in the [Contribution](#contribution) section.
+Suggestions are welcome - see how to contribute in the [Contribution](#contribution) section.
 
 
 ### Run
