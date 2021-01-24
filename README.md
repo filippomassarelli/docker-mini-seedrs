@@ -114,7 +114,7 @@ You can now send requests to localhost, on Port 3000.
 
 ### Test
 
-Our APIs have been developed following a behavior-driven development (BDD) using [RSpec](https://rspec.info/). 
+Our APIs have been developed following a behavior-driven development (BDD) approach using [RSpec](https://rspec.info/). 
 
 Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) the expected output of running `rspec`. 
 
