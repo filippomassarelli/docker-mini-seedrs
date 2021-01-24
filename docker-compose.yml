@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    image: docker-mini-seedrs
+    restart: "no"
+    environment:
+      - DBHOST=postgresql
+      - DBUSER=postgres
+      - DBPASS=password
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgresql
+
+  postgresql:
+    image: postgres
+    restart: "no"
+    ports:
+      - 5432
+    environment:
+      POSTGRES_DB: docker_mini_seedrs_development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgresdb:/var/lib/postgresql/data/
+
+volumes:
+  postgresdb:
+# So there are two services here.
+# In the postgresql service, we are using the official postgresql image and passing some values
+# for environment variables and exposing the internal 5432 port to the host machine.
+# We add a docker volume with it so that it stores data there and data can survive a restart.
+
+# The web service, runs the image we just built for the API and depends on postgresql service.
+# That means the postgresql service needs to be up and running first for web service to start running.
+# This is cool.
+# Since we specified the POSTGRES_DB environment in the postgresql service, if the database doesn't exist
+# when running the PostGreSQL server for the first time, it will create the database.
