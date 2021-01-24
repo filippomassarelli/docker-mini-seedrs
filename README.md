@@ -113,13 +113,13 @@ To make sure, you can run `docker ps` to list all containers and their status. Y
 
 ### Test
 
-We use [RSpec](https://rspec.info/), a Ruby testing tool created for behavior-driven development (BDD). 
+Our APIs have been developed following a behavior-driven development (BDD) using [RSpec](https://rspec.info/). 
 
-As instructed in [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) we can simply run `rspec` to see 7 tests pass. 
+Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) the expected output of running `rspec`. 
 
-:warning: However, since we are using PostgreSQL we require gpg2 password authentication for the test DB which was not correctly implemented here. 
+> :warning: For speed and efficiency [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) was developed with sqlite3 as database. When dockerizing the project, the decision to move to PostgreSQL was also made. A database authentication error now arises when running `rspec` which I am struggling to resolve. 
 
-Suggestions are welcome - see how to contribute in [Contribution](#contribution)
+> Suggestions are welcome - see how to contribute in the [Contribution](#contribution) section.
 
 
 ### Run
@@ -311,7 +311,7 @@ If one or more of the above conditions is not respected, your investment will be
 
 #### API endpoint
 
-The Investment API follows the same versioned structure as the Campaigns API, resulting in the following base URL:
+The Investment API follows the same versioned structure as the Campaigns API, resulting in the base URL:
 
 ```
 http://localhost:3000/api/v1/investments
@@ -396,7 +396,7 @@ To fix a bug or enhance an existing code, follow these steps:
 
 ---
 
-:point_up_2: [Back to the top](#mini-seedrs)
+:point_up_2: [Back to the top](#contents)
 
 **License**
 MIT © [Filippo Massarelli](https://github.com/filippomassarelli)
