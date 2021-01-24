@@ -382,13 +382,13 @@ To fix a bug or enhance an existing code, follow these steps:
 - Fork the repo
 - Create a new branch (`git checkout -b improve-feature`)
 - Make your changes
-- Commit with a descriptive message (`git commit -am 'description'`)
+- Commit with a descriptive message (`git commit -m 'description'`)
 - Push to the branch (`git push origin improve-feature`)
 - Create a Pull Request
 
 ---
 
-:point_up_2: [Back to the top](#contents)
+:point_up_2: [Back to the top](#mini-seedrs-is-on-docker)
 
 **License**
 MIT © [Filippo Massarelli](https://github.com/filippomassarelli)
