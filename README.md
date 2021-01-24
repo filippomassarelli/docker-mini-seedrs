@@ -50,6 +50,7 @@ Thank you supporting the next generation of businesses !
   - [Response](#response-1)
     - [Success](#success-1)
     - [Error](#error-1)
+  - [Contribution](#contribution)
 
 ---
 
@@ -112,13 +113,14 @@ To make sure, you can run `docker ps` to list all containers and their status. Y
 
 ### Test
 
-We use [RSpec](https://rspec.info/), a Ruby testing tool created for behavior-driven development (BDD).
+We use [RSpec](https://rspec.info/), a Ruby testing tool created for behavior-driven development (BDD). 
 
-Run the test suite to verify that everything is working correctly:
+As instructed in [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) we can simply run `rspec` to see 7 tests pass. 
 
-```
-rspec
-```
+:warning: However, since we are using PostgreSQL we require gpg2 password authentication for the test DB which was not correctly implemented here. 
+
+Suggestions are welcome - see how to contribute in [Contribution](#contribution)
+
 
 ### Run
 
@@ -380,4 +382,21 @@ If your investment is invalid you will receive one of the `4XX` `Client Error` c
 
 ---
 
+## Contribution
+Want to contribute? Great!
+
+To fix a bug or enhance an existing code, follow these steps:
+
+- Fork the repo
+- Create a new branch (`git checkout -b improve-feature`)
+- Make your changes
+- Commit with a descriptive message (`git commit -am 'description'`)
+- Push to the branch (`git push origin improve-feature`)
+- Create a Pull Request
+
+---
+
 :point_up_2: [Back to the top](#mini-seedrs)
+
+**License**
+MIT © [Filippo Massarelli](https://github.com/filippomassarelli)
