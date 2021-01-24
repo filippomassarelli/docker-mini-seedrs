@@ -12,6 +12,7 @@ RUN bundle install
 COPY . .
 
 # ENTRYPOINT ["./entrypoint.sh"]
+
 EXPOSE 3000
 
 # Start the main process.
