@@ -18,6 +18,10 @@ module Api
 
                     render json: {status: 'ERROR 404', message:'Invalid investment: campaign id not found', data:investment.campaign_id}, status: :not_found 
 
+                elsif investment.investment_amount <= 0
+
+                    render json: {status: 'ERROR 403', message:'Invalid investment: investment amount must be greater than 0', data:investment.investment_amount}, status: :forbidden 
+
                 elsif (investment.investment_amount % Campaign.find(id=investment.campaign_id).investment_multiple).round(2) != 0
                     
                     render json: {status: 'ERROR 403', message:"Invalid investment: investment amount is not a multiple of #{Campaign.find(id=investment.campaign_id).investment_multiple}", data:investment.investment_amount}, status: :forbidden 

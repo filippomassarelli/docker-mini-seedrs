@@ -58,6 +58,7 @@ Thank you supporting the next generation of businesses !
 ### Prerequisites
 
 Before you start, open your terminal and check whether you have ruby, rails and docker installed on your machine:
+
 ```
 $ ruby -v
 Rails 2.5.7
@@ -79,10 +80,9 @@ curl 7.54.0
 If you need to install any of these follow the relevant installation guides:
 
 - [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-- [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) 
+- [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html)
 - [Docker](https://www.docker.com/get-started)
 - [cURL](https://curl.se/download.html)
-
 
 ### Install and run
 
@@ -111,16 +111,15 @@ To make sure, open a new terminal tab and run `docker ps` to list all containers
 
 You can now send requests to localhost, on Port 3000.
 
-
 ### Test
 
-Our APIs have been developed following a behavior-driven development (BDD) approach using [RSpec](https://rspec.info/). 
+Our APIs have been developed following a behavior-driven development (BDD) approach using [RSpec](https://rspec.info/).
 
-Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) to see the expected output of running `rspec`. 
+Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) to see the expected output of running `rspec`.
 
-> :warning: For speed and efficiency [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) was developed with sqlite3 as database. When dockerizing the project, the decision to move to PostgreSQL was also made. A database authentication error now arises when running `rspec` which I am struggling to resolve. 
+> :warning: For speed and efficiency [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) was developed with sqlite3 as database. When dockerizing the project, the decision to move to PostgreSQL was also made. A database authentication error now arises when running `rspec` which I am struggling to resolve.
 
-BDD had already served its purpose though and we will be able to test the correct behaviour with our requests. 
+BDD had already served its purpose though and we will be able to test the correct behaviour with our requests.
 
 Nevertheless, suggestions on this issue are welcome - see how to contribute in the [Contribution](#contribution) section.
 
@@ -296,9 +295,9 @@ In order to successfully invest in a campaign through our Investment API, make s
 - [x] Invest in GBP (British Pounds) only
 - [x] Ensure the campaign is open for investment
 - [x] Invest an amount that is a multiple of the campaign's investment multiple
+- [x] The amount you invest needs to be greater than zero ! 🤦‍♂️
 
 If one or more of the above conditions is not respected, your investment will be rejected and an appropriate `ERROR` message returned (see section [3.4.2 Error](#error-1) for more information).
-
 
 ### Request
 
@@ -366,16 +365,17 @@ The new investment is saved in the database and returned in the response:
 
 If your investment is invalid you will receive one of the `4XX` `Client Error` codes below, explaining the reason why.
 
-| HTTP Status Code             | Description                                                                                                                                                       |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `403` `Forbidden`            | The investment amount did not respect the campaign's investment multiple. For reference, the investment multiple of the campaign is returned in the error message |
-| `404` `Not Found`            | A campaign with the specified id does not exist                                                                                                                   |
-| `406` `Not Acceptable`       | The investment was rejected, either because the investment was not in GBP or because the campaign was no longer open. This is specified in the error message      |
-| `422` `Unprocessable Entity` | The server was unable to process the contained instructions for reasons other than the above. The error appearing in the server is passed in the response         |
+| HTTP Status Code             | Description                                                                                                                                                                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `403` `Forbidden`            | The investment amount did not respect the campaign's investment multiple. For reference, the investment multiple of the campaign is returned in the error message                                                                |
+| `404` `Not Found`            | A campaign with the specified id does not exist                                                                                                                                                                                  |
+| `406` `Not Acceptable`       | The investment was rejected due to one of 3 reasons: (1) the investment currency was not GBP, (2) the investment amount was not greater than zero or (3) the campaign was no longer open. This is specified in the error message |
+| `422` `Unprocessable Entity` | The server was unable to process the contained instructions for reasons other than the above. The error appearing in the server is passed in the response                                                                        |
 
 ---
 
 ## Contribution
+
 Want to contribute? Great!
 
 To fix a bug or enhance an existing code, follow these steps:

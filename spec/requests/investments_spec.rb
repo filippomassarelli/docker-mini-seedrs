@@ -68,6 +68,19 @@ describe 'Investments API', type: :request do
             expect(response).to have_http_status(:forbidden)
         end
 
+        it 'invalidates the investment if its amount is not greater than zero' do
+
+            post '/api/v1/investments', params: {
+                investment: {
+                    campaign_id: "#{campaign.id}",
+                    user_name: "Filippo",
+                    investment_amount: 0,
+                    currency: 'GBP'
+                }
+            }
+            expect(response).to have_http_status(:forbidden)
+        end
+
     end
 
     describe 'POST /investments' do
