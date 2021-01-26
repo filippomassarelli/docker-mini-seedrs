@@ -192,11 +192,11 @@ V1 of the Campaign API allows you to retrieve a specific campaign, and perform a
 
 For greater control, version 1 also supports query paramenters to filter all campaigns above or below a specified target amount, and for specific sectors.
 
-| Query                           | Description                                                                                                          |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `?target_above={target_amount}` | Retrieve campaigns with targets above the specified amount                                                           |
-| `?target_below={target_amount}` | Retrieve campaigns with targets below the specified amount                                                           |
-| `?sector={sector}`              | Retrieve campaigns only for the specified sector (see sector list in the [Available data](#avaialable-data) section) |
+| Query                           | Description                                                                                                         |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `?target_above={target_amount}` | Retrieve campaigns with targets above the specified amount                                                          |
+| `?target_below={target_amount}` | Retrieve campaigns with targets below the specified amount                                                          |
+| `?sector={sector}`              | Retrieve campaigns only for the specified sector (see sector list in the [Available data](#available-data) section) |
 
 #### Example request
 
