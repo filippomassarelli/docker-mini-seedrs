@@ -11,12 +11,24 @@ RUN bundle install
 
 COPY . .
 
-# ENTRYPOINT ["./entrypoint.sh"]
+######
+## ENTRYPOINT ["./entrypoint.sh"]
 
+# EXPOSE 3000
+
+# # Start the main process.
+# CMD ["rails", "server", "-b", "0.0.0.0"]
+######
+
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
 
 
 # So we start from Ruby 2.7 pre-built image and then install PostgreSQL client into the system, this is a Debian based system so we use apt-get. 

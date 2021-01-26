@@ -3,16 +3,16 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   ##
+  username: postgres
+  password: password
 
 development:
   <<: *default
   database: docker_mini_seedrs_development
-  username: <%= ENV['DBUSER'] %>
-  password: <%= ENV['DBPASS'] %>
+  # username: <%= ENV['DBUSER'] %>
+  # password: <%= ENV['DBPASS'] %>
   host: <%= ENV['DBHOST'] %>
 
 test:
   <<: *default
   database: docker_mini_seedrs_test
-  # username: my_super_user
-  # username: my_super_user
