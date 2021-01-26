@@ -115,13 +115,21 @@ You can now send requests to localhost, on Port 3000.
 
 Our APIs have been developed following a behavior-driven development (BDD) approach using [RSpec](https://rspec.info/).
 
-Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) to see the expected output of running `rspec`.
+Run the test suite to verify that everything is working correctly:
 
-> :warning: For speed and efficiency [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) was developed with sqlite3 as database. When dockerizing the project, the decision to move to PostgreSQL was also made. A database authentication error now arises when running `rspec` which I am struggling to resolve.
+```
+rspec
+```
 
-BDD had already served its purpose though, we will also be able to test the correct API behaviour with our requests.
+You should expect 8 tests to pass:
 
-Nevertheless, suggestions on this issue are welcome - see how to contribute in the [Contribution](#contribution) section.
+```
+$ rspec
+.......
+
+Finished in 0.43225 seconds (files took 2.43 seconds to load)
+8 examples, 0 failures
+```
 
 ---
 

@@ -28,10 +28,6 @@ services:
 
 volumes:
   postgresdb:
-######
-
-#####
-
 # So there are two services here.
 # In the postgresql service, we are using the official postgresql image and passing some values
 # for environment variables and exposing the internal 5432 port to the host machine.
