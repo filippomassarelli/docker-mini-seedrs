@@ -5,8 +5,13 @@ module Api
             def index
                 if params[:target_above]
                     campaigns = Campaign.where("target_amount > ?", params[:target_above])
+
                 elsif params[:target_below]
                     campaigns = Campaign.where("target_amount < ?", params[:target_below])
+
+                elsif params[:sector]
+                    campaigns = Campaign.where(sector: params[:sector])
+
                 else
                     campaigns = Campaign.all
                 end

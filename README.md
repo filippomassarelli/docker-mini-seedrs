@@ -119,7 +119,7 @@ Refer to [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) to see 
 
 > :warning: For speed and efficiency [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) was developed with sqlite3 as database. When dockerizing the project, the decision to move to PostgreSQL was also made. A database authentication error now arises when running `rspec` which I am struggling to resolve.
 
-BDD had already served its purpose though and we will be able to test the correct behaviour with our requests.
+BDD had already served its purpose though, we will also be able to test the correct API behaviour with our requests.
 
 Nevertheless, suggestions on this issue are welcome - see how to contribute in the [Contribution](#contribution) section.
 
@@ -140,7 +140,7 @@ The Campaign API allows you to access the following data when asking for multipl
 - `image` (string): The url path of the logo of the business
 - `percentage_raised` (float): The percentage raised based on the investment target
 - `target_amount` (float): The investment target of the campaign
-- `sector` (string): The industry sector in which the business operates
+- `sector` (string): The industry sector in which the business operates (see list of sectors below)
 - `country` (string): The country where the business is based
 - `investment_multiple` (decimal): The investment multiple for the campaign to accepting new investment
 
@@ -148,6 +148,12 @@ Additional data is provided when accessing single campaigns:
 
 - `investment_count` (integer): The number of valid investments made for that campaign
 - `is_open` (boolean): A statement indicating whether the campaign is currently open for investment
+
+Mini Seedrs is sector agnostic, we allow campaigns from 17 sectors on our platform:
+
+```
+['Advertising & Marketing', 'Automotive & Transport', 'Clothing & Accessories', 'Content & Information', 'Data & Analytics', 'Energy', 'Entertainment', 'Fintech', 'Food & Beverage', 'Games', 'Healthcare', 'Home & Personal', 'Programming & Security', 'Property', 'Recruitment & Procurement', 'SaaS/PaaS', 'Travel, Leisure & Sport']
+```
 
 ### Request
 
@@ -184,12 +190,13 @@ V1 of the Campaign API allows you to retrieve a specific campaign, and perform a
 
 ##### Query parameters
 
-For greater control, V1 also supports query paramenters to filter all campaigns above or below a specified target amount.
+For greater control, version 1 also supports query paramenters to filter all campaigns above or below a specified target amount, and for specific sectors.
 
-| Query                           | Description                                                |
-| ------------------------------- | ---------------------------------------------------------- |
-| `?target_above={target_amount}` | Retrieve campaigns with targets above the specified amount |
-| `?target_below={target_amount}` | Retrieve campaigns with targets below the specified amount |
+| Query                           | Description                                                                                                          |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `?target_above={target_amount}` | Retrieve campaigns with targets above the specified amount                                                           |
+| `?target_below={target_amount}` | Retrieve campaigns with targets below the specified amount                                                           |
+| `?sector={sector}`              | Retrieve campaigns only for the specified sector (see sector list in the [Available data](#avaialable-data) section) |
 
 #### Example request
 

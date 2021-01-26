@@ -42,7 +42,7 @@ module Api
 
             private
 
-            # DOING SOMETHING WRONG WITH MY A BSTRACTIONS
+            # DOING SOMETHING WRONG WITH MY ABSTRACTIONS
 
             # def find_multiple
             #     Campaign.find(id=investment.campaign_id).investment_multiple
