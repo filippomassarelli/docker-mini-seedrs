@@ -1,6 +1,6 @@
 # Mini Seedrs is on Docker !
 
-( 💅 For a beautiful user experience checkout our UI at [react-mini-seedrs](https://github.com/filippomassarelli/react-mini-seedrs) )
+🎨 For a colorful experience checkout our UI at [react-mini-seedrs](https://github.com/filippomassarelli/react-mini-seedrs#--mini-seedrs-is-now-easy-to-use----)
 
 ## Introduction
 
