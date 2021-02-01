@@ -1,6 +1,6 @@
 # Mini Seedrs is on Docker !
 
-( :mag: For a complete commit history see [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) )
+( :artist_palette: For an amazing user experience checkout our UI at [react-mini-seedrs](https://github.com/filippomassarelli/react-mini-seedrs) )
 
 ## Introduction
 
