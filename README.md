@@ -407,4 +407,6 @@ To fix a bug or enhance an existing code, follow these steps:
 :point_up_2: [Back to the top](#mini-seedrs-is-on-docker-)
 
 **License**
-MIT © [Filippo Massarelli](https://github.com/filippomassarelli)
+MIT 
+
+with love ❤️ [Filippo Massarelli](https://github.com/filippomassarelli)
